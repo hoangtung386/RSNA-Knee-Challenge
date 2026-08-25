@@ -6,6 +6,31 @@ huấn luyện bằng ảnh + radiology report, nhưng lúc inference **chỉ c�
 Bài toán cốt lõi: chỉ 58/4407 study có nhãn do người gán, nhưng cả 4407 đều có
 report. Ta bóc tri thức từ 4407 cặp (ảnh, report) thay vì chỉ dựa vào 58 nhãn.
 
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.10+-blue?logo=python&logoColor=white" alt="Python">
+  <img src="https://img.shields.io/badge/PyTorch-2.2+-ee4c2c?logo=pytorch&logoColor=white" alt="PyTorch">
+  <img src="https://img.shields.io/badge/Torchvision-0.17+-ee4c2c?logo=pytorch&logoColor=white" alt="Torchvision">
+  <img src="https://img.shields.io/badge/NumPy-1.24+-013243?logo=numpy&logoColor=white" alt="NumPy">
+  <img src="https://img.shields.io/badge/Pandas-2.0+-150458?logo=pandas&logoColor=white" alt="Pandas">
+  <img src="https://img.shields.io/badge/Transformers-4.44+-ffd21e?logo=huggingface&logoColor=black" alt="Transformers">
+  <img src="https://img.shields.io/badge/timm-Model_Zoo-9cf" alt="timm">
+  <img src="https://img.shields.io/badge/pydicom-2.4+-blue" alt="pydicom">
+  <img src="https://img.shields.io/badge/einops-Rearrange-9cf" alt="einops">
+  <img src="https://img.shields.io/badge/scikit--learn-AUC-2094f3?logo=scikitlearn&logoColor=white" alt="scikit-learn">
+  <img src="https://img.shields.io/badge/matplotlib-Viz-11557c?logo=matplotlib&logoColor=white" alt="matplotlib">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Knowledge_Distillation-orange" alt="Knowledge Distillation">
+  <img src="https://img.shields.io/badge/3D_ViT-Student-9cf" alt="3D ViT Student">
+  <img src="https://img.shields.io/badge/DINOv2-Teacher-purple" alt="DINOv2 Teacher">
+  <img src="https://img.shields.io/badge/SAM-Segmentation-red" alt="SAM">
+  <img src="https://img.shields.io/badge/Gemma-VLM-green" alt="Gemma VLM">
+  <img src="https://img.shields.io/badge/Weak_Supervision-yellow" alt="Weak Supervision">
+  <img src="https://img.shields.io/badge/Grad--CAM-Explanations-pink" alt="Grad-CAM">
+  <img src="https://img.shields.io/badge/RSNA-Knee_MRI-blue" alt="RSNA Knee MRI">
+</p>
+
 ## Cài đặt
 
 ```bash
