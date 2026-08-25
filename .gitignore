@@ -1,0 +1,57 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# ---- Môi trường ảo ----
+.venv/
+venv/
+env/
+
+# ---- Colab / Jupyter ----
+.ipynb_checkpoints/
+*.ipynb_checkpoints/
+
+# ---- Secrets / tokens (HF, Colab) ----
+.env
+*.env
+secrets.json
+hf_token*
+
+# ---- Kết quả sinh ra (artifacts) ----
+artifacts/
+masks/
+checkpoints/
+cams/
+reports/
+logs/
+*.pt
+*.pth
+*.ckpt
+*.npy
+*.npz
+
+# ---- Dataset lớn (DICOM mô phỏng / Drive) ----
+# Bỏ comment dòng dưới nếu muốn loại luôn dataset khỏi git
+dataset/
+
+# ---- 3DINO vendor (clone repo AICONSlab/3DINO, chứa package dinov2) ----
+vendor/
+3dino_vit_weights.pth
+
+# ---- HuggingFace cache cục bộ (tùy chọn) ----
+# ~/.cache/huggingface mặc định nằm ngoài repo nên thường không cần
+
+# ---- OS ----
+.DS_Store
+Thumbs.db
+
+# ---- Công cụ dev ----
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*-checkpoint.ipynb
