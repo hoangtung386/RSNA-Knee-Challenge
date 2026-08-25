@@ -6,9 +6,7 @@ huấn luyện bằng ảnh + radiology report, nhưng lúc inference **chỉ c�
 Bài toán cốt lõi: chỉ 58/4407 study có nhãn do người gán, nhưng cả 4407 đều có
 report. Ta bóc tri thức từ 4407 cặp (ảnh, report) thay vì chỉ dựa vào 58 nhãn.
 
-[![CI](https://github.com/OWNER/REPO/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/ci.yml)
-
-> Sửa `OWNER/REPO` trong badge trên sau khi đẩy repo lên GitHub.
+[![CI](https://github.com/hoangtung386/RSNA-Knee-Challenge/actions/workflows/ci.yml/badge.svg)](https://github.com/hoangtung386/RSNA-Knee-Challenge/actions/workflows/ci.yml)
 
 ## Cài đặt
 
