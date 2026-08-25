@@ -1,0 +1,64 @@
+# Cấu hình gốc — mọi môi trường đều kế thừa file này.
+# Ghi đè bằng configs/env.<name>.yaml hoặc tham số --set trên CLI.
+
+seed: 42
+
+data:
+  volume_size: [128, 128]   # (H, W) sau resize
+  max_slices: 64            # D cố định — bất biến shape của toàn pipeline
+  max_series: 4             # số series tối đa lấy cho mỗi study
+  norm_mode: volume_percentile_pm1
+  prefer_plane: Sagittal
+  prefer_fluid: 1
+  prefer_fatsupp: 1
+
+model:
+  patch_size: [8, 16, 16]   # (D, H, W)
+  student_dim: 768
+  student_depth: 6
+  student_heads: 8
+  student_mlp_dim: 2048
+  student_dropout: 0.1
+  teacher_dim: 1024         # 3DINO-ViT (ViT-Large 3D)
+  guidance_dim: 3840        # hidden_size của VLM teacher — PHẢI khớp weights thật
+  contrast_dim: 512
+  metadata_dim: 5           # one-hot plane (3) + fluid (1) + fat (1)
+  use_metadata: true
+
+train:
+  batch_size: 4
+  epochs: 30
+  lr: 1.0e-4
+  weight_decay: 0.05
+  warmup_ratio: 0.05
+  grad_clip: 1.0
+  num_workers: 4
+  amp_dtype: bfloat16       # bfloat16 | float16 | none
+  log_every: 20
+  loss:
+    kd: 1.0                 # KD đặc trưng ảnh từ 3DINO-ViT
+    contrast: 1.0           # InfoNCE image <-> text guidance
+    cls: 1.0                # Asymmetric Loss trên 12 nhãn
+    auc: 0.5                # pairwise AUC-margin surrogate
+  temp: 0.07                # temperature InfoNCE
+  asl:
+    gamma_neg: 4.0
+    gamma_pos: 1.0
+    clip: 0.05
+  auc_margin: 1.0
+
+vlm:
+  model_id: google/gemma-3-12b-it
+  dtype: bfloat16
+  guidance_max_slices: 4
+  max_report_chars: 4000
+  max_new_tokens: 256
+
+sam:
+  model_id: facebook/sam-vit-huge
+
+dino:
+  repo_url: https://github.com/AICONSlab/3DINO
+  config_name: train/vit3d_highres
+  weight_file: 3dino_vit_weights.pth
+  input_size: 112
